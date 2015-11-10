@@ -1,0 +1,15 @@
+{
+  "name": "goliaph",
+  "version": "1.0.0",
+  "description": "my node machine",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kesjien/node_machine.git"
+  },
+  "author": "kes",
+  "license": "ISC",
+}
