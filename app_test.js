@@ -2,6 +2,9 @@
 var dog = {
   type: 'dog',
   name: 'bobby',
+  running () {
+    return `${this.type} is running now`;
+  },
   bark () {
     return `${this.type} with name ${this.name} bark bark bark`;
   }
