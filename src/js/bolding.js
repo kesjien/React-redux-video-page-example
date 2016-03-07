@@ -1,4 +1,4 @@
-define(function(){
+define(['bolding'], function(){
   function Bolding(id){
     this.element = document.getElementById(id);
   }
