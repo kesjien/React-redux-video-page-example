@@ -1,5 +1,5 @@
 'use strict';
-var dogFactory = require('../../app_test.js');
+var dogFactory = require('../../app_test2.js');
 var name = 'oggy',
     doggy;
 beforeEach(function() {
