@@ -2,7 +2,7 @@
   "name": "goliaph",
   "version": "1.0.0",
   "description": "Some not hello world example instance",
-  "main": "index.js",
+  "main": "indexApp.js",
   "scripts": {
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "build": "NODE_ENV=production webpack --progress --colors"

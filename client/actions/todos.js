@@ -1,9 +1,11 @@
-
-import { createAction } from 'redux-actions'
-
-export const addTodo = createAction('add todo')
-export const deleteTodo = createAction('delete todo')
-export const editTodo = createAction('edit todo')
-export const completeTodo = createAction('complete todo')
-export const completeAll = createAction('complete all')
-export const clearCompleted = createAction('clear complete')
+import { createAction } from 'redux-actions';
+export const addVideo = createAction('add video');
+export const deleteVideo = createAction('delete video');
+export const addComment = createAction('add comment');
+export const deleteComment = createAction('delete comment');
+// export const addTodo = createAction('add todo');
+// export const deleteTodo = createAction('delete todo');
+// export const editTodo = createAction('edit todo');
+// export const completeTodo = createAction('complete todo');
+// export const completeAll = createAction('complete all');
+// export const clearCompleted = createAction('clear complete');
