@@ -7,7 +7,7 @@ class HeaderApp extends Component {
     return (
       <header>
         <div className={style.header}>
-          <img src="http://htmlcoder.me/preview/the_project/v.1.2/template/images/logo_light_blue.png"/>
+          <img src="http://htmlcoder.me/preview/the_project/v.1.2/template/images/logo_light_blue.png" />
           <h1>Some smoky video list</h1>
         </div>
       </header>
