@@ -1,4 +1,3 @@
-
 import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { Provider } from 'react-redux';
@@ -7,6 +6,7 @@ import React from 'react';
 
 import App from './containers/App';
 import configure from './store';
+import VideoSection from './components/MainSection';
 
 const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -14,7 +14,9 @@ const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App} />
+      <Route path="/" component={App}>
+        <Route path="video" component={VideoSection} />
+      </Route>
     </Router>
   </Provider>,
   document.getElementById('root')
