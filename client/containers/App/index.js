@@ -13,15 +13,10 @@ class App extends Component {
     return (
       <div className={style.normal}>
         <HeaderApp />
-        <div>
-        <h1>APP!</h1>
-        <ul>
-          <li><Link to="video"> Yo </Link></li>
-          <li><IndexLink to="/" > IndexLink </IndexLink></li>
-        </ul>
+        <Link to="video"> Yo </Link>
+        <Link to="/" > IndexLink </Link>
 
         {this.props.children}
-      </div>
         <MainSection todos={todos} actions={actions} />
         {children}
       </div>
@@ -31,7 +26,7 @@ class App extends Component {
 App.propTypes = {
   children: React.PropTypes.node,
   actions: React.PropTypes.object,
-  todos: React.PropTypes.object,
+  todos: React.PropTypes.array,
 };
 
 function mapStateToProps(state) {

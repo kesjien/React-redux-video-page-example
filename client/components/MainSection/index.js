@@ -50,7 +50,7 @@ class MainSection extends Component {
           activeCount={activeCount}
           filter={filter}
           onClearCompleted={this.handleClearCompleted}
-          onShow={::this.handleShow} />
+          onShow={this.handleShow} />
       )
     }
   }
@@ -59,7 +59,7 @@ class MainSection extends Component {
     const { todos, actions } = this.props
     const { filter } = this.state
 
-    // const filteredTodos = todos.filter(TODO_FILTERS[filter])
+    const filteredTodos = todos.filter(TODO_FILTERS[filter])
     const completedCount = todos.reduce((count, todo) => {
       return todo.completed ? count + 1 : count
     }, 0)
