@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import style from './style.css';
 import SocialVideo from './social-video';
 
 const videos = [
@@ -50,17 +50,15 @@ export default class App extends Component {
   }
 
   render() {
-    const { service, video } = videos[this.state.videoIndex];
     return (
-      <div>
-        <SocialVideo service={service} video={video} width={500} height={270} />
-        <p>
-          <span>{service}: </span>
-          <span>{video}</span>
-        </p>
-        <button onClick={this.goToVideo.bind(this, this.state.videoIndex - 1)}>Previous</button>
-        <button onClick={this.goToVideo.bind(this, this.state.videoIndex + 1)}>Next</button>
-      </div>
+        <section>
+        <ul className="video_list">
+          {videos.map(video =>
+            <SocialVideo className={style.normal} service={video.service} video={video.video}
+             width={500} height={270} />
+          )}
+        </ul>
+      </section>
     );
   }
 }

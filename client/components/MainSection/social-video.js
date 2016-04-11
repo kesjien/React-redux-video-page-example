@@ -19,7 +19,7 @@ export default class SocialVideo extends Component {
     return (
       <iframe
         src={src}
-        frameBorder="0"
+        frameBorder="10"
         webkitAllowFullScreen
         mozallowfullscreen
         allowFullScreen
