@@ -12,3 +12,30 @@
   top: 10px;
   left: 5px;
 }
+.header a {
+  top: 7px;
+  right: 40px;
+  position: relative;
+  vertical-align: middle;
+  color: #ffffff;
+  font-weight: 300;
+  display: inline-block;
+  font: normal normal normal 15px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  line-height: 1.46666667;
+  border-radius: 3px;
+  width: 110px;
+  margin: 10px;
+  text-align: center;
+}
+
+.header a:hover {
+  background-color: #09afdf;
+}
+
+.link {
+  float: right;
+}

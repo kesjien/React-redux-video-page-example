@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import style from './style.css';
 
 class HeaderApp extends Component {
@@ -8,7 +9,11 @@ class HeaderApp extends Component {
       <header>
         <div className={style.header}>
           <img src="http://htmlcoder.me/preview/the_project/v.1.2/template/images/logo_light_blue.png" />
-          <h1>Some smoky video list</h1>
+          <h1>Some greedy video list</h1>
+          <div className={style.link}>
+            <Link to="/" > Main section </Link>
+            <Link to="video"> Add video </Link>
+          </div>
         </div>
       </header>
     );
@@ -16,28 +21,3 @@ class HeaderApp extends Component {
 }
 
 export default HeaderApp;
-
-// import React, { Component } from 'react'
-// import TodoTextInput from '../TodoTextInput'
-
-// class Header extends Component {
-//   handleSave(text) {
-//     if (text.length) {
-//       this.props.addTodo(text)
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <header>
-//         <h1>Todos</h1>
-//         <TodoTextInput
-//           newTodo
-//           onSave={::this.handleSave}
-//           placeholder="What needs to be done?" />
-//       </header>
-//     )
-//   }
-// }
-
-// export default Header
