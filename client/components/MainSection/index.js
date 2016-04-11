@@ -1,81 +1,66 @@
+import React, { Component } from 'react';
 
-import React, { Component } from 'react'
-import TodoItem from '../TodoItem'
-import Footer from '../Footer'
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
-import style from './style.css'
+import SocialVideo from './social-video';
 
-const TODO_FILTERS = {
-  [SHOW_ALL]: () => true,
-  [SHOW_ACTIVE]: todo => !todo.completed,
-  [SHOW_COMPLETED]: todo => todo.completed
-}
+const videos = [
+  {
+    service: 'youtube',
+    video: 'https://www.youtube.com/watch?v=XxVg_s8xAms',
+  },
+  {
+    service: 'youtube',
+    video: 'XuZLtMrCOoU',
+  },
+  {
+    service: 'vimeo',
+    video: 'https://vimeo.com/151715092',
+  },
+  {
+    service: 'vimeo',
+    video: '148177148',
+  },
+  {
+    service: 'dailymotion',
+    video: 'http://www.dailymotion.com/video/x3oc771_la-voiture-du-futur_tech',
+  },
+  {
+    service: 'dailymotion',
+    video: 'x3p6f0f_long-story-short-teaser-saison-2_tech',
+  },
+];
 
-class MainSection extends Component {
-  constructor(props, context) {
-    super(props, context)
-    this.state = { filter: SHOW_ALL }
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoIndex: 0,
+    };
   }
 
-  handleClearCompleted() {
-    const atLeastOneCompleted = this.props.todos.some(todo => todo.completed)
-    if (atLeastOneCompleted) {
-      this.props.actions.clearCompleted()
+  goToVideo(index) {
+    let videoIndex = index;
+    if (videoIndex < 0) {
+      videoIndex = videos.length - 1;
+    } else if (videoIndex >= videos.length) {
+      videoIndex = 0;
     }
-  }
-
-  handleShow(filter) {
-    this.setState({ filter })
-  }
-
-  renderToggleAll(completedCount) {
-    const { todos, actions } = this.props
-    if (todos.length > 0) {
-      return <input
-        className={style.toggleAll}
-        type="checkbox"
-        checked={completedCount === todos.length}
-        onChange={actions.completeAll} />
-    }
-  }
-
-  renderFooter(completedCount) {
-    const { todos } = this.props
-    const { filter } = this.state
-    const activeCount = todos.length - completedCount
-
-    if (todos.length) {
-      return (
-        <Footer completedCount={completedCount}
-          activeCount={activeCount}
-          filter={filter}
-          onClearCompleted={this.handleClearCompleted}
-          onShow={this.handleShow} />
-      )
-    }
+    this.setState({
+      videoIndex,
+    });
   }
 
   render() {
-    const { todos, actions } = this.props
-    const { filter } = this.state
-
-    const filteredTodos = todos.filter(TODO_FILTERS[filter])
-    const completedCount = todos.reduce((count, todo) => {
-      return todo.completed ? count + 1 : count
-    }, 0)
-
+    const { service, video } = videos[this.state.videoIndex];
     return (
-      <section className={style.main}>
-        {this.renderToggleAll(completedCount)}
-        <ul className={style.normal}>
-          {filteredTodos.map(todo =>
-            <TodoItem key={todo.id} todo={todo} {...actions} />
-          )}
-        </ul>
-        {this.renderFooter(completedCount)}
-      </section>
-    )
+      <div>
+        <SocialVideo service={service} video={video} width={500} height={270} />
+        <p>
+          <span>{service}: </span>
+          <span>{video}</span>
+        </p>
+        <button onClick={this.goToVideo.bind(this, this.state.videoIndex - 1)}>Previous</button>
+        <button onClick={this.goToVideo.bind(this, this.state.videoIndex + 1)}>Next</button>
+      </div>
+    );
   }
 }
-
-export default MainSection

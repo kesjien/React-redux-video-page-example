@@ -3,16 +3,19 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import HeaderApp from '../../components/Header';
 import MainSection from '../../components/MainSection';
+import FooterMain from '../../components/Footer';
 import * as TodoActions from '../../actions/todos';
 import style from './style.css';
 
 class App extends Component {
   render() {
-    const { todos, actions } = this.props;
+    const { todos, actions, children } = this.props;
     return (
       <div className={style.normal}>
         <HeaderApp />
+        {children}
         <MainSection todos={todos} actions={actions} />
+        <FooterMain />
       </div>
     );
   }
@@ -20,6 +23,7 @@ class App extends Component {
 App.propTypes = {
   actions: React.PropTypes.object,
   todos: React.PropTypes.array,
+  children: React.PropTypes.array,
 };
 
 function mapStateToProps(state) {

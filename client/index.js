@@ -6,7 +6,7 @@ import React from 'react';
 
 import App from './containers/App';
 import configure from './store';
-import Foo from './components/VideoSection';
+import AddVideo from './components/VideoSection';
 
 const store = configure();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -15,8 +15,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <Route path="video" component={Foo} />
-        <Route path="addVideo" component={Foo} />
+        <Route path="video" component={AddVideo} />
       </Route>
     </Router>
   </Provider>,
