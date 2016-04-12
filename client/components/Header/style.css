@@ -4,17 +4,15 @@
   border-bottom: 1px solid #252a2c;
   position: absolute;
   height: 50px;
-  top: -200px;
+  top: -130px;
   width: 100%;
 }
 .header img {
   position: absolute;
-  top: 10px;
+  top: 60px;
   left: 5px;
 }
 .header a {
-  top: 7px;
-  right: 40px;
   position: relative;
   vertical-align: middle;
   color: #ffffff;
@@ -36,6 +34,40 @@
   background-color: #09afdf;
 }
 
+.header h1 {
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  width: 100%;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 0.6;
+  text-align: center;
+  color:  #F5F6DC;
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
+
 .link {
   float: right;
+  top: -40px;
+  position: relative;
+}
+.searchBox {
+  box-sizing: border-box;
+}
+.formControl {
+  font-family: 'Raleway', sans-serif;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  top: -28px;
+  position: relative;
+  float: right;
+  border-color: #e1e1e1;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  border: 1px solid #ccc;
+  font-size: 14px;
 }

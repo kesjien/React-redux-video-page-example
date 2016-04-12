@@ -9,11 +9,17 @@ class HeaderApp extends Component {
       <header>
         <div className={style.header}>
           <img src="http://htmlcoder.me/preview/the_project/v.1.2/template/images/logo_light_blue.png" />
-          <h1>Some greedy video list</h1>
+          <h1>Some weird video list</h1>
           <div className={style.link}>
             <Link to="/" > Main section </Link>
             <Link to="video"> Add video </Link>
           </div>
+          <form role="search" className={style.searchBox}>
+            <div className="form-group has-feedback">
+              <input type="text" className={style.formControl} placeholder="Search" />
+              <i className="icon-search form-control-feedback"></i>
+            </div>
+          </form>
         </div>
       </header>
     );

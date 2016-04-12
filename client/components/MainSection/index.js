@@ -51,13 +51,14 @@ export default class App extends Component {
 
   render() {
     return (
-        <section>
-        <ul className="video_list">
+      <section>
+        <div className={style.mainBox}>
           {videos.map(video =>
-            <SocialVideo className={style.normal} service={video.service} video={video.video}
-             width={500} height={270} />
+            <div className={style.videoItem}>
+              <SocialVideo service={video.service} video={video.video} />
+            </div>
           )}
-        </ul>
+        </div>
       </section>
     );
   }

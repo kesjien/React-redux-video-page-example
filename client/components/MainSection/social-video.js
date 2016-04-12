@@ -15,11 +15,12 @@ export default class SocialVideo extends Component {
   render() {
     const { service, video, htmlTags } = this.props;
     const src = `${SocialVideo.urlMap.get(service)}${this.getIdFromVideoString(video)}`;
-
     return (
       <iframe
         src={src}
-        frameBorder="10"
+        frameBorder="5"
+        width="196"
+        height="110"
         webkitAllowFullScreen
         mozallowfullscreen
         allowFullScreen

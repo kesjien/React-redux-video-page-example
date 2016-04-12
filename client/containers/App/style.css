@@ -32,6 +32,8 @@ body {
   -ms-font-smoothing: antialiased;
   font-smoothing: antialiased;
   font-weight: 300;
+  top: -80px;
+  position: absolute;
 }
 
 button,
@@ -64,18 +66,7 @@ input[type="checkbox"] {
   font-weight: 300;
   color: #e6e6e6;
 }
-
-.normal h1 {
+#root {
+  top: -75px;
   position: absolute;
-  width: 100%;
-  font-size: 28px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
-  color:  #F5F6DC;
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  -ms-text-rendering: optimizeLegibility;
-  text-rendering: optimizeLegibility;
 }

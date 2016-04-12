@@ -148,3 +148,16 @@
     appearance: none;
   }
 }
+
+.videoItem {
+      margin-bottom: 12px;
+    margin-right: 16px;
+    display: inline-block;
+    margin-left: 40px;
+    width: 172px;
+}
+.mainBox {
+  border-bottom: 1px solid #e2e2e2;
+      padding: 18px;
+      background: transparent;
+}
