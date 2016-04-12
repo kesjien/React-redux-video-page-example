@@ -5,7 +5,7 @@ import SocialVideo from './social-video';
 const videos = [
   {
     service: 'youtube',
-    video: 'https://www.youtube.com/watch?v=XxVg_s8xAms',
+    video: 'XxVg_s8xAms',
   },
   {
     service: 'youtube',
@@ -13,20 +13,21 @@ const videos = [
   },
   {
     service: 'vimeo',
-    video: 'https://vimeo.com/151715092',
+    video: '151715092',
   },
   {
     service: 'vimeo',
     video: '148177148',
   },
   {
-    service: 'dailymotion',
-    video: 'http://www.dailymotion.com/video/x3oc771_la-voiture-du-futur_tech',
+    service: 'vimeo',
+    video: '151715092',
   },
   {
-    service: 'dailymotion',
-    video: 'x3p6f0f_long-story-short-teaser-saison-2_tech',
+    service: 'vimeo',
+    video: '148177148',
   },
+
 ];
 
 export default class App extends Component {

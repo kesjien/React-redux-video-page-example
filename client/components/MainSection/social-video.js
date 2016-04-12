@@ -1,5 +1,6 @@
 import qs from 'query-string';
 import React, { Component, PropTypes } from 'react';
+import style from './style.css';
 
 export default class SocialVideo extends Component {
 
@@ -13,26 +14,26 @@ export default class SocialVideo extends Component {
   }
 
   render() {
-    const { service, video, htmlTags } = this.props;
+    const { service, video } = this.props;
     const src = `${SocialVideo.urlMap.get(service)}${this.getIdFromVideoString(video)}`;
     return (
-      <iframe
-        src={src}
-        frameBorder="5"
-        width="196"
-        height="110"
-        webkitAllowFullScreen
-        mozallowfullscreen
-        allowFullScreen
-        {...htmlTags}
-      />
+      <div className={style.wrapper}>
+        <iframe
+          src={src}
+          frameBorder="5"
+          width="196"
+          height="110"
+          webkitAllowFullScreen
+          mozallowfullscreen
+          allowFullScreen
+        />
+      </div>
     );
   }
 }
 SocialVideo.propTypes = {
   service: PropTypes.oneOf(['youtube', 'vimeo', 'dailymotion']).isRequired,
   video: PropTypes.string.isRequired,
-  htmlTags: PropTypes.array,
 };
 SocialVideo.urlMap = new Map([
   ['youtube', 'http://www.youtube.com/embed/'],

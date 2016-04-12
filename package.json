@@ -45,6 +45,8 @@
     "webpack-hot-middleware": "^2.7.1"
   },
   "dependencies": {
-    "flow-bin": "^0.22.1"
+    "ajax-request": "^1.2.1",
+    "flow-bin": "^0.22.1",
+    "jquery": "^2.2.3"
   }
 }

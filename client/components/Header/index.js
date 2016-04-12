@@ -14,12 +14,10 @@ class HeaderApp extends Component {
             <Link to="/" > Main section </Link>
             <Link to="video"> Add video </Link>
           </div>
-          <form role="search" className={style.searchBox}>
-            <div className="form-group has-feedback">
-              <input type="text" className={style.formControl} placeholder="Search" />
-              <i className="icon-search form-control-feedback"></i>
-            </div>
-          </form>
+          <div className="form-group has-feedback">
+            <input type="text" className={style.formControl} placeholder="Search" />
+            <i className="icon-search form-control-feedback"></i>
+          </div>
         </div>
       </header>
     );
