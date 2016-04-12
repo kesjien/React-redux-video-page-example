@@ -6,8 +6,10 @@ export default class AddVideo extends Component {
     return (
       <div>
         <div className={style.formGroup}>
-          <input type="text" className={style.formControl} placeholder="Some video url" />
+          <input type="text" className={style.formControl}
+            placeholder="Write some video url here..." />
           <i className={style.iconSearch}></i>
+          <button type="button" className={style.submitButton}>Submit</button>
         </div>
       </div>
     );

@@ -20,8 +20,8 @@
   position: relative !important;
 }
 .formGroup {
-  width: 50%;
-    margin: 0 auto;
+  width: 40%;
+  margin: 0 auto;
 }
 .iconSearch {
   background: url(data:image/gif;base64,R0lGODlhEwALAKECAAAAABISEv///////yH5BAEKAAIALAAAAAATAAsAAAIdDI6pZ+suQJyy0ocV3bbm33EcCArmiUYk1qxAUAAAOw==) no-repeat center;
@@ -32,4 +32,28 @@
   top: 10px;
   position: relative;
   right: 25px;
+}
+.submitButton {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  top: 10px;
+  position: relative;
+}
+.submitButton:hover {
+  background-color: #00D0FF;
 }
