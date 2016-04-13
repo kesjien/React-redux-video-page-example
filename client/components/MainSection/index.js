@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import style from './style.css';
-import SocialVideo from './social-video';
+import Video from './video';
 
-export default class App extends Component {
-
+class App extends Component {
   render() {
+    const { deleteVideo } = this.props.actions;
     return (
       <section>
         <div className={style.mainBox}>
           {this.props.videos.map(video =>
             <div className={style.videoItem}>
-              <SocialVideo service={video.service} video={video.video} />
+              <Video service={video.service} video={video.video} />
               <div className={style.infoBox}>
                 <div className={style.commentForm}> Add comments ...</div>
                 <div className={style.view}>Views: 0</div>
+                <a href="#"
+                  onClick={() => deleteVideo(video.video)}
+                  videoId={video.video}
+                  className={style.iconDelete}>
+                  Delete
+                </a>
               </div>
             </div>
           )}
@@ -24,4 +30,8 @@ export default class App extends Component {
 }
 App.propTypes = {
   videos: React.PropTypes.array,
+  actions: React.PropTypes.object,
+  deleteVideo: React.PropTypes.string,
 };
+
+export default App;

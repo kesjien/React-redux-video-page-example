@@ -11,10 +11,8 @@ export default class AddVideo extends Component {
       text: this.props.text || '',
     };
   }
-  componentDidMount() {
-  }
+
   handleChange(e) {
-    console.log(e.target.value);
     this.setState({ text: e.target.value });
   }
 

@@ -40,7 +40,7 @@ export default handleActions({
   },
 
   'delete video' (state, action) {
-    return state.filter(video => video.id !== action.payload )
+    return state.filter(video => video.video !== action.payload )
   },
 
   'edit video' (state, action) {
