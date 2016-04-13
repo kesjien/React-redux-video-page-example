@@ -38,18 +38,6 @@ export default class App extends Component {
     };
   }
 
-  goToVideo(index) {
-    let videoIndex = index;
-    if (videoIndex < 0) {
-      videoIndex = videos.length - 1;
-    } else if (videoIndex >= videos.length) {
-      videoIndex = 0;
-    }
-    this.setState({
-      videoIndex,
-    });
-  }
-
   render() {
     return (
       <section>

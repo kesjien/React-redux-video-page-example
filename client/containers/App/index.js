@@ -9,12 +9,12 @@ import style from './style.css';
 
 class App extends Component {
   render() {
-    const { todos, actions, children } = this.props;
+    const { todos, actions, children, videos } = this.props;
     return (
       <div className={style.normal}>
         <HeaderApp />
         {children}
-        <MainSection todos={todos} actions={actions} />
+        <MainSection todos={todos} videos={videos} actions={actions} />
         <FooterMain />
       </div>
     );
@@ -23,12 +23,14 @@ class App extends Component {
 App.propTypes = {
   actions: React.PropTypes.object,
   todos: React.PropTypes.array,
-  children: React.PropTypes.array,
+  videos: React.PropTypes.array,
+  children: React.PropTypes.object,
 };
 
 function mapStateToProps(state) {
   return {
     todos: state.todos,
+    videos: state.videos,
   };
 }
 
