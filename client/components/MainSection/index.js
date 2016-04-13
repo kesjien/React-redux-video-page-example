@@ -57,6 +57,10 @@ export default class App extends Component {
           {videos.map(video =>
             <div className={style.videoItem}>
               <SocialVideo service={video.service} video={video.video} />
+              <div className={style.infoBox}>
+                <div className={style.commentForm}> Add comments ...</div>
+                <div className={style.view}>Views: 0</div>
+              </div>
             </div>
           )}
         </div>
