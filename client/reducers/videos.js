@@ -31,10 +31,11 @@ const videos = [
 
 export default handleActions({
   'add video' (state, action) {
+    const service = action.payload.split('.')[1];
+    const video = action.payload.split('v=')[1];
     return [{
-      id: state.reduce((maxId, video) => Math.max(video.id, maxId), -1) + 1,
-      completed: false,
-      text: action.payload
+      service: service,
+      video: video
     }, ...state]
   },
 

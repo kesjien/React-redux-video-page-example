@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import HeaderApp from '../../components/Header';
 import MainSection from '../../components/MainSection';
 import FooterMain from '../../components/Footer';
-import * as TodoActions from '../../actions/todos';
+import * as Actions from '../../actions/actions';
 import style from './style.css';
 
 class App extends Component {
@@ -36,7 +36,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions, dispatch),
+    actions: bindActionCreators(Actions, dispatch),
   };
 }
 

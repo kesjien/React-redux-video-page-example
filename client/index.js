@@ -9,7 +9,6 @@ import configure from './store';
 import AddVideo from './components/VideoSection';
 
 const store = configure();
-console.log(store.getState());
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(

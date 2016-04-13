@@ -2,47 +2,13 @@ import React, { Component } from 'react';
 import style from './style.css';
 import SocialVideo from './social-video';
 
-const videos = [
-  {
-    service: 'youtube',
-    video: 'XxVg_s8xAms',
-  },
-  {
-    service: 'youtube',
-    video: 'XuZLtMrCOoU',
-  },
-  {
-    service: 'vimeo',
-    video: '151715092',
-  },
-  {
-    service: 'vimeo',
-    video: '148177148',
-  },
-  {
-    service: 'vimeo',
-    video: '151715092',
-  },
-  {
-    service: 'vimeo',
-    video: '148177148',
-  },
-
-];
-
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      videoIndex: 0,
-    };
-  }
 
   render() {
     return (
       <section>
         <div className={style.mainBox}>
-          {videos.map(video =>
+          {this.props.videos.map(video =>
             <div className={style.videoItem}>
               <SocialVideo service={video.service} video={video.video} />
               <div className={style.infoBox}>
@@ -56,3 +22,6 @@ export default class App extends Component {
     );
   }
 }
+App.propTypes = {
+  videos: React.PropTypes.array,
+};
