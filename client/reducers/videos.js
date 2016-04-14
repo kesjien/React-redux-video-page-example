@@ -51,8 +51,12 @@ export default handleActions({
   },
 
   'delete video' (state, action) {
-    console.log(action)
     return state.filter(video => video.id !== action.payload )
+  },
+
+  'search video' (state, action) {
+    console.log(action);
+    return state
   },
 
   'edit video' (state, action) {

@@ -12,7 +12,7 @@ class App extends Component {
     const { todos, actions, children, videos } = this.props;
     return (
       <div className={style.normal}>
-        <HeaderApp />
+        <HeaderApp actions={actions} />
         {children}
         <MainSection todos={todos} videos={videos} actions={actions} />
         <FooterMain />
