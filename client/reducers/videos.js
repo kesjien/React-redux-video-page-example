@@ -4,7 +4,7 @@ import { handleActions } from 'redux-actions'
 const videos = [
   {
     id: 2,
-    title: 'Video 3 fkdsjfjsdjj dsf kskl fdsjj fsd jkdsklfjks dljfks jf k jdsfjdsjf k jdsfjsjfkl',
+    title: 'Video 3 about some nature sights...',
     service: 'vimeo',
     video: '151715092',
   },
