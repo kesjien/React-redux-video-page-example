@@ -165,7 +165,8 @@
   font-family: 'Raleway', sans-serif;
   display: inline-flex;
   line-height: 1.3em;
-  background: transparent
+  background: transparent;
+  width: 200px;
 }
 .iconDelete {
   position: relative;
@@ -178,6 +179,7 @@
   -webkit-font-smoothing: antialiased;
   color: red;
   text-decoration: none;
+  left: 50px;
 }
 .title {
   text-align: center;
@@ -189,4 +191,8 @@
   color: #09AFBC;
   font-weight: 500;
   margin: 0 10px;
+  width: 100%;
+}
+.view {
+  position: relative;
 }

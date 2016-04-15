@@ -3,20 +3,8 @@ import { handleActions } from 'redux-actions'
 
 const videos = [
   {
-    id: 0,
-    title: 'Video 1',
-    service: 'youtube',
-    video: 'XxVg_s8xAms',
-  },
-  {
-    id: 1,
-    title: 'Video 2',
-    service: 'youtube',
-    video: 'XuZLtMrCOoU',
-  },
-  {
     id: 2,
-    title: 'Video 3',
+    title: 'Video 3 fkdsjfjsdjj dsf kskl fdsjj fsd jkdsklfjks dljfks jf k jdsfjdsjf k jdsfjsjfkl',
     service: 'vimeo',
     video: '151715092',
   },
@@ -38,20 +26,32 @@ const videos = [
     service: 'vimeo',
     video: '148177148',
   },
-
+  {
+    id: 0,
+    title: 'Video 1',
+    service: 'youtube',
+    video: 'XxVg_s8xAms',
+  },
+  {
+    id: 1,
+    title: 'Video 2',
+    service: 'youtube',
+    video: 'XuZLtMrCOoU',
+  },
 ];
 
 export default handleActions({
   'add video' (state, action) {
-    const service = (action.payload.split('.')[1] === 'youtube')
+    const service = (action.payload.text.split('.')[1] === 'youtube')
       ? 'youtube'
       : 'vimeo';
     const video = (service === 'youtube')
-      ? action.payload.split('v=')[1]
-      : action.payload.split('com/')[1];
+      ? action.payload.text.split('v=')[1]
+      : action.payload.text.split('com/')[1];
     return [{
       service: service,
       video: video,
+      title: action.payload.title,
       id: state.length,
     }, ...state]
   },

@@ -22,7 +22,7 @@ export default class AddVideo extends Component {
 
   addVideo() {
     let { dispatch } = this.props;
-    let action = Actions.addVideo(this.state.text);
+    let action = Actions.addVideo({'text':this.state.text, 'title':this.state.title});
     dispatch(action);
   }
 

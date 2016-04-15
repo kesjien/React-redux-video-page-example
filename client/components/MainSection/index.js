@@ -15,13 +15,15 @@ class App extends Component {
               <Video service={video.service} video={video.video} />
               <div className={style.infoBox}>
                 <div className={style.commentForm}> Add comments ...</div>
-                <div className={style.view}>Views: 0</div>
                 <a href="#"
                   onClick={() => deleteVideo(video.id)}
                   videoId={video.video}
                   className={style.iconDelete}>
                   Delete
                 </a>
+              </div>
+              <div className={style.infoBox}>
+                <div className={style.view}>Views: 0</div>
               </div>
             </div>
           )}
