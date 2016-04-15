@@ -151,10 +151,10 @@
 
 .videoItem {
   margin-bottom: 12px;
-  margin-right: 16px;
+  margin-right: 40px;
   display: inline-block;
   margin-left: 40px;
-  width: 172px;
+  width: 134px;
 }
 .mainBox {
   border-bottom: 1px solid #e2e2e2;
@@ -178,4 +178,15 @@
   -webkit-font-smoothing: antialiased;
   color: red;
   text-decoration: none;
+}
+.title {
+  text-align: center;
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+  display: inline-flex;
+  line-height: 1.3em;
+  background: transparent;
+  color: #09AFBC;
+  font-weight: 500;
+  margin: 0 10px;
 }

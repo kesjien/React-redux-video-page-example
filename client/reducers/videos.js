@@ -4,31 +4,37 @@ import { handleActions } from 'redux-actions'
 const videos = [
   {
     id: 0,
+    title: 'Video 1',
     service: 'youtube',
     video: 'XxVg_s8xAms',
   },
   {
     id: 1,
+    title: 'Video 2',
     service: 'youtube',
     video: 'XuZLtMrCOoU',
   },
   {
     id: 2,
+    title: 'Video 3',
     service: 'vimeo',
     video: '151715092',
   },
   {
     id: 3,
+    title: 'Video 4',
     service: 'vimeo',
     video: '148177148',
   },
   {
     id: 4,
+    title: 'Video 5',
     service: 'vimeo',
     video: '151715092',
   },
   {
     id: 5,
+    title: 'Video 6',
     service: 'vimeo',
     video: '148177148',
   },
@@ -51,12 +57,12 @@ export default handleActions({
   },
 
   'delete video' (state, action) {
-    return state.filter(video => video.id !== action.payload )
+    return state.filter(video => video.id !== action.payload);
   },
 
   'search video' (state, action) {
-    console.log(action);
-    return state
+    const stateNew = state.filter(video => video.title === action.payload);
+    return (stateNew.length === 0) ? videos : stateNew;
   },
 
   'edit video' (state, action) {

@@ -12,8 +12,12 @@ export default class AddVideo extends Component {
     };
   }
 
-  handleChange(e) {
+  handleChangeText(e) {
     this.setState({ text: e.target.value });
+  }
+
+  handleChangeTitle(e) {
+    this.setState({ title: e.target.value });
   }
 
   addVideo() {
@@ -26,13 +30,25 @@ export default class AddVideo extends Component {
     return (
       <div>
         <div className={style.formGroup}>
-          <input type="text" className={style.formControl}
-            type="text"
-            autoFocus="true"
-            value={this.state.text}
-            onChange={::this.handleChange}
-            placeholder="Write some video url here..." />
-          <i className={style.iconSearch}></i>
+          <div>
+            <span className={style.title}>Video name: </span>
+            <input type="text" className={style.formControl}
+              type="text"
+              autoFocus="true"
+              value={this.state.title}
+              onChange={::this.handleChangeTitle}
+              placeholder="Write some video name here..." />
+          </div>
+          <div>
+            <span className={style.title}>Video url: </span>
+            <input type="text" className={style.formControl}
+              type="text"
+              autoFocus="true"
+              value={this.state.text}
+              onChange={::this.handleChangeText}
+              placeholder="Write some video url here..." />
+            <i className={style.iconSearch}></i>
+          </div>
           <button type="button" onClick={::this.addVideo} className={style.submitButton}>
             Submit
           </button>

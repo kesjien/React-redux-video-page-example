@@ -5,11 +5,13 @@ import Video from './video';
 class App extends Component {
   render() {
     const { deleteVideo } = this.props.actions;
+    const videos = this.props.videos;
     return (
       <section>
         <div className={style.mainBox}>
-          {this.props.videos.map(video =>
+          {videos.map(video =>
             <div key={video.id} className={style.videoItem}>
+              <span className={style.title}>{video.title}</span>
               <Video service={video.service} video={video.video} />
               <div className={style.infoBox}>
                 <div className={style.commentForm}> Add comments ...</div>

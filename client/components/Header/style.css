@@ -84,15 +84,15 @@
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border-radius: 4px;
-  top: 9px;
+  top: 7px;
+  height: 22px;
   right: 4px;
   position: relative;
   float: right;
   background-color: rgba(0, 0, 0, 0.2);
-  font: normal normal normal 18px/1 FontAwesome;
+  font: normal normal normal 16px/1 FontAwesome;
   border-radius: 3px;
-  color: #ccc;
+  color: #fff;
 }
 .submitButton:hover {
   background-color: #00D0FF;
