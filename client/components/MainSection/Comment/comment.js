@@ -1,0 +1,20 @@
+import React, { Component } from 'react';
+
+class Comment extends Component {
+  rawMarkup() {
+    const rawMarkup = marked(this.props.children.toString(), { sanitize: true });
+    return { __html: rawMarkup };
+  }
+
+  render() {
+    return (
+      <div className="comment">
+        <h2 className="commentAuthor"y>
+          {this.props.author}
+        </h2>
+        <span dangerouslySetInnerHTML={this.rawMarkup()} />
+      </div>
+    );
+  }
+}
+export default Comment;

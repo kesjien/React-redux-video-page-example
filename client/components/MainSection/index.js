@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import style from './style.css';
 import Video from './video';
+import Comment from './comment';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      clicked: false,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      clicked: true,
+    });
+  }
   render() {
     const { deleteVideo } = this.props.actions;
     const videos = this.props.videos;
@@ -14,7 +27,13 @@ class App extends Component {
               <span className={style.title}>{video.title}</span>
               <Video service={video.service} video={video.video} />
               <div className={style.infoBox}>
-                <div className={style.commentForm}> Add comments ...</div>
+                <div className={style.commentForm}>
+                  <a href="#"
+                    className={style.addComment}
+                    onClick={this.handleClick}>
+                  Add comments...
+                  </a>
+                </div>
                 <a href="#"
                   onClick={() => deleteVideo(video.id)}
                   videoId={video.video}
@@ -27,6 +46,7 @@ class App extends Component {
               </div>
             </div>
           )}
+          {this.state.clicked ? <Comment /> : null}
         </div>
       </section>
     );
