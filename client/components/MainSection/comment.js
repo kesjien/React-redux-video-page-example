@@ -6,6 +6,7 @@ import CommentForm from './Comment/commentform';
 class CommentBox extends Component {
   constructor() {
     super();
+    console.log(this)
     const data = [
       { id: 1, author: 'Pete Hunt', text: 'This is one comment' },
       { id: 2, author: 'Jordan Walke', text: 'This is *another* comment' },
@@ -14,8 +15,8 @@ class CommentBox extends Component {
       data,
     };
   }
-  handleCommentSubmit() {
-    console.log('add comment');
+  handleCommentSubmit(data) {
+    console.log(data);
   }
 
   render() {
@@ -23,7 +24,7 @@ class CommentBox extends Component {
       <div className={style.commentContainer}>
         <h1>Comments</h1>
         <CommentList data={this.state.data} />
-        <CommentForm onCommentSubmit={this.handleCommentSubmit} />
+        <CommentForm onCommentSubmit={::this.handleCommentSubmit} />
       </div>
     );
   }

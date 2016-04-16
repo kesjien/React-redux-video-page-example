@@ -4,7 +4,7 @@ class CommentForm extends Component {
   constructor() {
     super();
     this.state = {
-      author: 'Johny', text: 'Bark Bark Bark Bark',
+      author: '', text: '',
     };
   }
   handleAuthorChange(e) {
@@ -25,18 +25,18 @@ class CommentForm extends Component {
   }
   render() {
     return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
+      <form className="commentForm" onSubmit={::this.handleSubmit}>
         <input
           type="text"
           placeholder="Your name"
           value={this.state.author}
-          onChange={this.handleAuthorChange}
+          onChange={::this.handleAuthorChange}
         />
         <input
           type="text"
           placeholder="Say something... plz"
           value={this.state.text}
-          onChange={this.handleTextChange}
+          onChange={::this.handleTextChange}
         />
         <input type="submit" value="Post" />
       </form>
