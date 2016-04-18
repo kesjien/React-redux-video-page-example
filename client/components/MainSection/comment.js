@@ -4,27 +4,14 @@ import CommentList from './Comment/commentlist';
 import CommentForm from './Comment/commentform';
 
 class CommentBox extends Component {
-  constructor() {
-    super();
-    console.log(this)
-    const data = [
-      { id: 1, author: 'Pete Hunt', text: 'This is one comment' },
-      { id: 2, author: 'Jordan Walke', text: 'This is *another* comment' },
-    ];
-    this.state = {
-      data,
-    };
-  }
-  handleCommentSubmit(data) {
-    console.log(data);
-  }
-
   render() {
+    console.log(this.props)
+    const { addComment } = this.props.actions;
     return (
       <div className={style.commentContainer}>
         <h1>Comments</h1>
-        <CommentList data={this.state.data} />
-        <CommentForm onCommentSubmit={::this.handleCommentSubmit} />
+        <CommentList data={this.props.comments} />
+        <CommentForm onCommentSubmit={(comment) => addComment(comment)} />
       </div>
     );
   }

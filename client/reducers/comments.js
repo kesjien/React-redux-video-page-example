@@ -7,6 +7,11 @@ const comments = [
 
 export default handleActions({
   'add comment'(state, action) {
-    return state;
+    return [{
+      videoId: 1,
+      text: action.payload.text,
+      author: action.payload.author,
+      id: 3,
+    }, ...state];
   },
 }, comments);

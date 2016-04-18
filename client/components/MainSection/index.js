@@ -19,6 +19,7 @@ class App extends Component {
   render() {
     const { deleteVideo } = this.props.actions;
     const videos = this.props.videos;
+    const comments = this.props.comments;
     return (
       <section>
         <div className={style.mainBox}>
@@ -46,7 +47,7 @@ class App extends Component {
               </div>
             </div>
           )}
-          {this.state.clicked ? <Comment /> : null}
+          {this.state.clicked ? <Comment comments={comments} actions={this.props.actions} /> : null}
         </div>
       </section>
     );
@@ -56,6 +57,7 @@ App.propTypes = {
   videos: React.PropTypes.array,
   actions: React.PropTypes.object,
   deleteVideo: React.PropTypes.string,
+  comments: React.PropTypes.array,
 };
 
 export default App;
