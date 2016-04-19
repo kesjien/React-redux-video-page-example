@@ -8,7 +8,7 @@ const comments = [
 export default handleActions({
   'add comment'(state, action) {
     return [{
-      videoId: 1,
+      videoId: action.payload.videoId,
       text: action.payload.text,
       author: action.payload.author,
       id: 3,
