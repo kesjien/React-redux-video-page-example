@@ -20,7 +20,7 @@ class CommentForm extends Component {
     if (!text || !author) {
       return;
     }
-    this.props.onCommentSubmit({author: author, text: text});
+    this.props.onCommentSubmit({author: author, text: text, videoId:this.props.videoId});
     this.setState({ author: '', text: '' });
   }
   render() {

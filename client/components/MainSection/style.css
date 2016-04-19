@@ -213,3 +213,11 @@
   font-size: 22px;
   font-style: italic;
 }
+.closeButton {
+  float: right;
+  cursor: pointer;
+  color: red;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+}

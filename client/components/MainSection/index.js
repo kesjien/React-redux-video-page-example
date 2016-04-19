@@ -9,11 +9,12 @@ class App extends Component {
     this.state = {
       clicked: false,
     };
-    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick() {
+  // anti-pattern due tot dynamic component
+  handleClick(videoId, close) {
     this.setState({
-      clicked: true,
+      clicked: (close) ? false : true,
+      videoId,
     });
   }
   render() {
@@ -31,7 +32,7 @@ class App extends Component {
                 <div className={style.commentForm}>
                   <a href="#"
                     className={style.addComment}
-                    onClick={this.handleClick}>
+                    onClick={this.handleClick.bind(this, video.id, false)}>
                   Add comments...
                   </a>
                 </div>
@@ -47,7 +48,11 @@ class App extends Component {
               </div>
             </div>
           )}
-          {this.state.clicked ? <Comment comments={comments} actions={this.props.actions} /> : null}
+          {this.state.clicked ? <Comment
+            videoId={this.state.videoId}
+            comments={comments}
+            onClickHandler={(close) => this.handleClick(this.state.videoId, 'close')}
+            actions={this.props.actions} /> : null}
         </div>
       </section>
     );

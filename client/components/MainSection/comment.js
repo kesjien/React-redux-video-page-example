@@ -5,13 +5,18 @@ import CommentForm from './Comment/commentform';
 
 class CommentBox extends Component {
   render() {
-    console.log(this.props)
     const { addComment } = this.props.actions;
+    const commentsData =
+      this.props.comments.filter((comment) => (comment.videoId === this.props.videoId));
     return (
       <div className={style.commentContainer}>
+        <div className={style.closeButton}
+          onClick={ () => this.props.onClickHandler('close') }>Close</div>
         <h1>Comments</h1>
-        <CommentList data={this.props.comments} />
-        <CommentForm onCommentSubmit={(comment) => addComment(comment)} />
+        <CommentList data={commentsData} />
+        <CommentForm
+          videoId={this.props.videoId}
+          onCommentSubmit={(comment) => addComment(comment)} />
       </div>
     );
   }
