@@ -12,7 +12,7 @@ class CommentBox extends Component {
       <div className={style.commentContainer}>
         <div className={style.closeButton}
           onClick={ () => this.props.onClickHandler('close') }>Close</div>
-        <h1>Comments</h1>
+        <h2>Comments</h2>
         <CommentList data={commentsData} />
         <CommentForm
           videoId={this.props.videoId}

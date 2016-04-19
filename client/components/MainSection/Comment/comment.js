@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import style from '../style.css';
 
 class Comment extends Component {
   rawMarkup() {
@@ -8,8 +9,8 @@ class Comment extends Component {
 
   render() {
     return (
-      <div className="comment">
-        <h2 className="commentAuthor"y>
+      <div className={style.itemComment}>
+        <h2 className={style.commentAuthor}>
           {this.props.author}
         </h2>
         <span dangerouslySetInnerHTML={this.rawMarkup()} />

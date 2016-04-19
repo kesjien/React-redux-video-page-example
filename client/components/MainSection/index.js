@@ -17,6 +17,10 @@ class App extends Component {
       videoId,
     });
   }
+  getLength(idVideo) {
+    const videoComment = this.props.comments.filter((comment) => comment.videoId === idVideo);
+    return (videoComment.length) ? videoComment.length : 0;
+  }
   render() {
     const { deleteVideo } = this.props.actions;
     const videos = this.props.videos;
@@ -44,7 +48,7 @@ class App extends Component {
                 </a>
               </div>
               <div className={style.infoBox}>
-                <div className={style.view}>Views: 0</div>
+                <div className={style.view}>Comments: {this.getLength(video.id)}</div>
               </div>
             </div>
           )}
