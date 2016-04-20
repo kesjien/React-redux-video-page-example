@@ -21,5 +21,11 @@ class CommentBox extends Component {
     );
   }
 }
-
+CommentBox.propTypes = {
+  actions: React.PropTypes.array,
+  addComment: React.PropTypes.function,
+  videoId: React.PropTypes.int,
+  onClickHandler: React.PropTypes.function,
+  comments: React.PropTypes.array,
+};
 export default CommentBox;

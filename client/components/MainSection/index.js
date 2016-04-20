@@ -10,16 +10,16 @@ class App extends Component {
       clicked: false,
     };
   }
+  getLength(idVideo) {
+    const videoComment = this.props.comments.filter((comment) => comment.videoId === idVideo);
+    return (videoComment.length) ? videoComment.length : 0;
+  }
   // anti-pattern due tot dynamic component
   handleClick(videoId, close) {
     this.setState({
       clicked: (close) ? false : true,
       videoId,
     });
-  }
-  getLength(idVideo) {
-    const videoComment = this.props.comments.filter((comment) => comment.videoId === idVideo);
-    return (videoComment.length) ? videoComment.length : 0;
   }
   render() {
     const { deleteVideo } = this.props.actions;
@@ -55,7 +55,7 @@ class App extends Component {
           {this.state.clicked ? <Comment
             videoId={this.state.videoId}
             comments={comments}
-            onClickHandler={(close) => this.handleClick(this.state.videoId, 'close')}
+            onClickHandler={() => this.handleClick(this.state.videoId, 'close')}
             actions={this.props.actions} /> : null}
         </div>
       </section>

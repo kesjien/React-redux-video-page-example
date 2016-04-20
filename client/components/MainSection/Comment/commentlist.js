@@ -17,4 +17,7 @@ class CommentList extends Component {
     );
   }
 }
+CommentList.propTypes = {
+  data: React.PropTypes.array,
+};
 export default CommentList;
