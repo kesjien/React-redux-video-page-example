@@ -64,12 +64,4 @@ export default handleActions({
     const stateNew = state.filter(video => video.title === action.payload);
     return (stateNew.length === 0) ? videos : stateNew;
   },
-
-  'edit video' (state, action) {
-    return state.map(video => {
-      return video.id === action.payload.id
-        ? { ...video, text: action.payload.text }
-        : video
-    })
-  },
 }, videos)
