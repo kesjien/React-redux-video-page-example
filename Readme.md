@@ -7,4 +7,4 @@ Weird video collection react-redux example
    - https://www.youtube.com/watch?v=umAxuxN9fJU
  * Search/Delete videos
  * Comment list with another reduce ( combineReducers )
- * Add Comments (popup component onlcick event)
+ * Add Comments (popup component onlclick event)
