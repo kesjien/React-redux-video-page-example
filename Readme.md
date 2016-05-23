@@ -8,3 +8,4 @@ Weird video collection react-redux example
  * Search/Delete videos
  * Comment list with another reduce ( combineReducers )
  * Add Comments (popup component onlclick event)
+ * Dont need any test cases due to simple and pure functions
