@@ -1,6 +1,14 @@
 ###note###
 Weird video collection react-redux example
-  Just exploring react-redux world
+  Combine reducers experience
+
+###Building###
+
+##npm start
+##npm run build
+
+
+
  * Just copy some social video (youtube, vimeo) full url to add video section
  * Example:
    - https://vimeo.com/56500115
