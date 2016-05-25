@@ -4,8 +4,10 @@ Weird video collection react-redux example
 
 ###Building###
 
-* npm start
-* npm run build
+ * npm start
+ * npm run build
+
+###Gutz###
 
  * Just copy some social video (youtube, vimeo) full url to add video section
  * Example:
