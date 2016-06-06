@@ -4,8 +4,8 @@ Weird video collection react-redux example
 
 ###Building###
 
+ * npm install
  * npm start
- * npm run build
 
 ###Gutz###
 
